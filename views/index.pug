@@ -1,8 +1,12 @@
 extends layout
 
 block content
-  h1= title
-  div
-  each val in messages
-    p= `${val.text} ${val.user} ${val.added}`
+  div.page
+    h1= title
+    div#board
+      each val in messages
+        div#post
+          p#dateAndName= `${val.user} ${val.added}`
+          p= val.text
+    a(href='/new') New message
 

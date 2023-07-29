@@ -1,13 +1,17 @@
 extends layout
 
 block content
-  h1= title
-  form(action='/new', method='POST')
-    div
-      div
-        label Name
-        input(type='text' name="authorName")
-      div
-        label Message
-        input(type='text' name="messageText")
-    button(type='submit') Submit
+  div.page
+    h1= title
+    form(action='/new', method='POST')
+      div#inputs
+        div#inputBlock
+          label Name
+          input(type='text' name="authorName")
+        div#inputBlock
+          label Message
+          textarea(name="messageText")
+      div#outOrSubmit
+        a(href='/') Back to messages
+        button(type='submit') Submit
+      
